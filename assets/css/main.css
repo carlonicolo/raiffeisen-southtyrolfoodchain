@@ -34,7 +34,7 @@ a:active {
 
 /* panel */
 #collapse1 {
-    height: 500px;
+    height: 300px;
 }
 
 .panel > .panel-heading {
@@ -50,6 +50,11 @@ a:active {
 #euro_balance_profile{
     width: 150px;
     max-width: 150px;
+    font-size: small;
+}
+
+span.bold{
+    font:bold;
 }
 
 #stat_euro_balance{
@@ -60,4 +65,7 @@ a:active {
 
 #eurobalance{
     width: 150px;
+    font: bold;
+    color: green;
+    font-size: large;
 }
