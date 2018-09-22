@@ -6,12 +6,13 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </head>
 <body>
 
 <div class="container">
     <div id="logoApp">
-    <img class="img-responsive" alt="Raiffeisen logo" src="pics/BankLogo.jpg"></img>
+    <img class="img-responsive" alt="Raiffeisen logo" src="pics/BankLogo.jpg" />
     </div>
     <!--
   <h2>South Tyrol Example</h2>
@@ -24,10 +25,40 @@
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Balance</a>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      <div id="collapse1" class="panel-collapse collapse in" onclick="graph()">
+        <div class="panel-body">
+
+
+            <table style="width:100%">
+              <tr>
+                <td>
+                  <div id="euro_balance_profile">
+                    <ul>
+                      <li>
+                        
+                      </li>
+                      <li>
+
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+    
+                <td>
+                  <div id="stat_euro_balance">
+                    <canvas id="barChart" width="200px" height="200px"></canvas>
+                  </div>
+                </td>
+              
+              </tr>
+              
+              <tr>
+                <td><div id="eurobalance">Balance</div></td>
+            </tr>
+          </table>
+
+</div>
+          </div>
       </div>
     </div>
     <div class="panel panel-default">
@@ -59,3 +90,32 @@
     
 </body>
 </html>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var chartDiv = $("#barChart");
+    var myChart = new Chart(chartDiv, {
+      type: 'pie',
+      data: {
+          labels: ["Deposit", "Withdraw"],
+          datasets: [
+          {
+              data: [80,20],
+              backgroundColor: [
+                 "#048B04",
+              "#A21802"
+              ]
+          }]
+      },
+      options: {
+          title: {
+              display: true,
+              //text: 'Pie Chart'
+          },
+      responsive: true,
+  maintainAspectRatio: false,
+      }
+  });
+  });
+
+  </script>

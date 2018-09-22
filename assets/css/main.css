@@ -42,6 +42,22 @@ a:active {
     color: white;
 }
 
+.container{
+    max-width: 500px;
+}
+
+/* Balance divs */
+#euro_balance_profile{
+    width: 150px;
+    max-width: 150px;
+}
+
+#stat_euro_balance{
+    width: 350px;
+    max-width: 340px;
+}
 
 
-
+#eurobalance{
+    width: 150px;
+}
