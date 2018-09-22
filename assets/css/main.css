@@ -1,0 +1,47 @@
+a {
+    color: white;
+    /* text-decoration: none; */
+}
+
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+
+/* Logo bank app */
+#logoApp{
+    text-align: center;
+}
+
+/* accordion - no space between Logo and panels */
+#accordion {
+    margin-top: 0px;
+}
+
+
+/* panel */
+#collapse1 {
+    height: 500px;
+}
+
+.panel > .panel-heading {
+    background-color: #008742;
+    color: white;
+}
+
+
+
+
