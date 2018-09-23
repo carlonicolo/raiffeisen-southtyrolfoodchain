@@ -124,6 +124,14 @@ span.bold{
     text-align: center;
 }
 
+#badge1{
+    width: 230px;
+}
+
+#badge2{
+    width: 230px;
+}
+
 /* qrcode.html */
 
 #collapseQrcode{
