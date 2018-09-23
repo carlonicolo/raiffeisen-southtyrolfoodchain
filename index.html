@@ -7,12 +7,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <title>Raiffeisen bank app</title>
 </head>
 <body>
 
 <div class="container">
     <div id="logoApp">
-    <img class="img-responsive" alt="Raiffeisen logo" src="pics/BankLogo.jpg" />
+    <img class="img-responsive" alt="Raiffeisen logo" src="pics/BankLogo.jpg">
     </div>
     <!--
   <h2>South Tyrol Example</h2>
@@ -26,6 +27,8 @@
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in" onclick="graph()">
+        
+        <!-- Start Balance panel -->
         <div class="panel-body">
 
 
@@ -63,21 +66,74 @@
           </table>
 
 </div>
+    <!-- End Balance panel -->
           </div>
       </div>
     </div>
+
+
+    <!-- Start crypto panel -->
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">South Tyrol Food Chain</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">South Tyrol Food Chain crypto</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div class="panel-body">
+             
+          <div class="row">
+                <div class="col-md-12"> 
+                    <img src="pics/logoCrypto.png" alt="Logo South Tyrol Food Chain Crypto">
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12" id="title_crypto_balance">Balance:<p class="sftc_balance" id="crypto_balance">100</p>   </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12" id="separator_div_exchange"></div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12"> <p class="bold_words">Buy STFC: exchange value 1€ = 1 STFC<br></p> </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12" id="button_buy_exchange"><button type="button" class="btn btn-danger">Buy STFC crypto</button></div>
+              
+              </div>
+              <!--
+              <div class="row">
+                  <div class="col-sm-2">€ <input type="text" id="euro_val"></div>
+                  <div class="col-sm-2">  <button onclick="sum()">exchange</button> </div>
+                  <div class="col-sm-5"><p class="title_crypto_balance" id="result"></div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12"> <br> </div>
+              </div>
+
+              -->
+
+              <div class="row">
+                  <div class="col-md-12" id="separator_div_exchange"></div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12" id="qrcode_button"> <button type="button" onclick="window.location.href = 'qrcode.html';"  class="btn btn-success">Scan QrCode</button> </div>
+                  
+              </div>
+              
+              
+        </div>
       </div>
     </div>
+
+    <!-- End Balance panel -->
+
+
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -92,6 +148,29 @@
     </div>
   </div> 
 </div>
+
+
+<script>
+  function readQrcode(){
+
+  }
+</script>
+
+
+
+<script>
+  function sum(){
+    var val1 = document.getElementById("euro_val").value;
+    var result = parseFloat(val1);
+    
+  
+  if(!isNaN(result))
+  {
+    document.getElementById("result").innerHTML="$STFC "+result;
+    document.getElementById("crypto_balance").innerHTML="$STFC "+result;
+  }
+  }
+</script>
     
 </body>
 </html>
@@ -124,3 +203,5 @@
   });
 
   </script>
+
+  

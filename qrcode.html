@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <title>Raiffeisen bank app</title>
+
+
+
+  <script type="text/javascript">
+    var HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
+    var anHttpRequest = new XMLHttpRequest();
+    anHttpRequest.onreadystatechange = function() { 
+    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+    aCallback(anHttpRequest.responseText);
+    }
+    anHttpRequest.open( "GET", aUrl, true ); 
+    anHttpRequest.send(); 
+    }
+    }
+    var theurl='http://southtyrol-food-chain.herokuapp.com/api/product';
+    var client = new HttpClient();
+    client.get(theurl, function(response) { 
+    var response1 = JSON.parse(response);
+    //alert(response);
+    console.log(response1);
+    
+    
+    
+    
+   //var jsonData = JSON.parse(myMessage);
+   for (var i = 0; i < response1.length; i++) {
+       var counter = response1[i];
+       console.log("Rank:",counter.index, counter.timestamp, counter.sender, counter.data, counter.previous_hash);
+       var res = counter.previous_hash
+       var res_sub = res.substring(4, 0);
+       res_sub +="..."
+      
+       $("#tableID").find('tbody')
+        .append($('<tr>')
+          .append($('<td></td>').text(counter.index)
+            .append($('</tr>')
+            )
+          )
+
+          .append($('<td></td>').text(counter.timestamp)
+            .append($('</tr>')
+            )
+          )
+
+          .append($('<td></td>').text(counter.sender)
+            .append($('</tr>')
+            )
+          )
+
+          .append($('<td></td>').text(counter.data)
+            .append($('</tr>')
+            )
+          )
+
+          .append($('<td></td>').text(res_sub)
+            .append($('</tr>')
+            )
+          )
+
+        );
+
+       
+   }
+    
+   
+
+   
+    
+    }); 
+    </script>
+
+
+
+</head>
+<body>
+
+<div class="container">
+    <div id="logoApp">
+    <img class="img-responsive" alt="Raiffeisen logo" src="pics/BankLogo.jpg">
+    </div>
+   
+
+  <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseQrcode">Qrcode</a>
+            </h4>
+          </div>
+          <div id="collapseQrcode" class="panel-collapse collapse in">
+            
+            <!-- Start Balance panel -->
+            <div class="panel-body">
+
+                <img class="img-responsive" alt="QrCode" src="pics/qrcode.png" height="100px" width="100px"> 1L Milch
+
+                <div class="alert alert-success" role="alert">
+                    Purchase succeed 
+                      </div>
+                      <br>
+                      <div class="row">
+                            <div class="col-md-12" id="separator_div_exchange"></div>
+                        </div>
+
+                        <div class="row">
+                                <div class="col-md-12" id="food_chain"> Food Chain <br> </div>
+                            </div>
+
+                    <table class="table" id="tableID">
+                            <thead>
+                              <tr>
+                                <th>Id</th>
+                                <th>Timestamp</th>
+                                <th>Sender</th>
+                                <th>Data</th>
+                                <th>Previous hash</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!-- here the table jquery -->
+                            </tbody>
+                          </table>
+    
+                
+    
+    </div>
+        <!-- End Balance panel -->
+              </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+  
+</div>
+
+    
+</body>
+</html>

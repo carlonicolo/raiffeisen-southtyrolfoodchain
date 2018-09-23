@@ -69,3 +69,69 @@ span.bold{
     color: green;
     font-size: large;
 }
+
+#crypto_table{
+    margin-top: 0px;
+}
+
+#title_crypto_balance{
+    font-weight: bold;
+    font-size: large;
+}
+
+#euro_val{
+    width: 100px;
+} 
+
+#stfc_val{
+    width: 100px;
+}
+
+#separator_div_exchange{
+    height: 3px;
+    background: #008742;
+}
+
+.bold_words{
+    font-weight: bold;
+}
+
+#modal_qrcode{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#qrcode_modal{
+    text-align: center;
+}
+
+.center_qrcode{
+    text-align: center;
+}
+
+.modal-body > .modal-body{
+    text-align: center;
+}
+
+#qrcode_button{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#button_buy_exchange{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* qrcode.html */
+
+#collapseQrcode{
+    height: 500px;
+}
+
+#food_chain{
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
